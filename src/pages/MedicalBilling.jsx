@@ -44,10 +44,10 @@ export default function MedicalBilling() {
       <section className="py-12 bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <p className="text-center text-sm uppercase tracking-wider text-gray-500 mb-10">
-            Trusted by leading healthcare providers
+            Certified by Leading Healthcare Academies
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {['HIPAA Compliant', 'ICD-10 Certified', '98% Accuracy', '24/7 Support'].map((badge, i) => (
+            {['AAPC', 'AHIMA', 'Wellsky', 'HIPAA'].map((badge, i) => (
               <div 
                 key={i} 
                 className="bg-gray-50 p-4 rounded-lg text-center border border-gray-200 hover:shadow-sm transition"

@@ -50,7 +50,7 @@ export default function Home() {
                 <img
   src="/images/4b9a7b8ab18ba1ced90d9fa6a0172833.jpg"
   alt="Modern healthcare team with digital technology and medical documentation"
-  className="relative aspect-[4/3] w-full rounded-2xl object-cover shadow-2xl ring-1 ring-slate-200"
+  className="relative aspect-[3/2] w-full rounded-2xl object-cover shadow-2xl ring-1 ring-slate-200"
   fetchpriority="high"
   decoding="async"
   width="1600"
@@ -292,19 +292,19 @@ export default function Home() {
                     <p className="text-lg text-slate-600 leading-relaxed mb-8">{f.body}</p>
                     <div className="flex flex-col sm:flex-row gap-4">
                       <Link 
-                        to="/services/medical-scribing" 
+                        to="/services/medical-coding" 
                         className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[color:var(--primary)] to-[color:var(--accent)] text-white font-semibold rounded-xl hover:shadow-lg transition-all duration-200"
                       >
-                        Explore Scribing
+                        Explore Coding
                         <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                         </svg>
                       </Link>
                       <Link 
-                        to="/services/medical-coding" 
+                        to="/services/medical-billing" 
                         className="inline-flex items-center px-6 py-3 bg-white text-slate-700 font-semibold rounded-xl border-2 border-slate-200 hover:border-[color:var(--primary)] hover:text-[color:var(--primary)] transition-all duration-200"
                       >
-                        Explore Coding
+                        Explore Billing
                       </Link>
                     </div>
                   </div>

@@ -135,7 +135,7 @@ export default function About() {
             Anil Thippireddy
           </p>
           <p className="text-blue-600 font-medium mb-2">CPC</p>
-          <p className="text-gray-600">Co-founder and Coding Manager</p>
+          <p className="text-gray-600">Co-founder and Head of Operations</p>
         </div>
         <div className="flex space-x-3 justify-center">
           <button className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-blue-50 hover:text-blue-600 transition-colors">

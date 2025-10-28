@@ -58,44 +58,55 @@ export default function Resources() {
 
       {/* Hero */}
       {/* Hero */}
-      <section className="relative overflow-hidden py-16 sm:py-24">
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-gradient-to-br from-[color:var(--primary)]/20 to-[color:var(--accent)]/20 blur-3xl"></div>
-          <div className="absolute -bottom-24 -left-24 w-72 h-72 rounded-full bg-gradient-to-tr from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 blur-3xl"></div>
-        </div>
-        <div className="section">
-          <div className="grid lg:grid-cols-12 gap-10 items-center">
-            <div className="lg:col-span-7">
-              <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 mb-6">
-                EMR/EHR <span className="bg-gradient-to-r from-[color:var(--primary)] to-[color:var(--accent)] bg-clip-text text-transparent">Application</span>
-              </h1>
-              <div className="p-6 sm:p-8 rounded-2xl ring-1 ring-slate-200 bg-white/80 backdrop-blur">
-                <p className="text-lg sm:text-xl text-slate-700 leading-relaxed">
-                  <span className="font-semibold text-[color:var(--primary)]">LUZORION</span> has been providing EMR implementation and training support since <span className="font-semibold">2023</span> with experience in both short and long‑term project plans. Our experienced healthcare IT professionals have built careers on successful EHR deployments across diverse care settings. We provide end‑to‑end planning and implementation services to guide you through strategy, planning, workflow assessment, build, activation, and post go‑live monitoring. Our experience translates to lessons learned and practical solutions. We collaborate closely, learn your needs, and integrate our product knowledge to achieve your expected results.
-                </p>
-                <div className="mt-6 flex flex-wrap gap-2">
-                  {['Strategy', 'Workflow', 'Build', 'Training', 'Go‑Live', 'Optimization'].map((chip) => (
-                    <span key={chip} className="px-3 py-1 rounded-full text-sm font-medium bg-[color:var(--primary)]/10 text-[color:var(--primary)] border border-[color:var(--primary)]/20">{chip}</span>
-                  ))}
-                </div>
-              </div>
-            
-            </div>
-            <div className="lg:col-span-5">
-              <div className="relative">
-                <div className="absolute -inset-4 bg-gradient-to-r from-[color:var(--primary)]/15 to-[color:var(--accent)]/15 rounded-2xl blur-xl"></div>
-                <div className="relative aspect-[4/3] w-full rounded-2xl bg-gradient-to-br from-white to-slate-50 ring-1 ring-slate-200 p-6 flex items-center justify-center">
-                  <div className="grid grid-cols-2 gap-3 w-full">
-                    {['Strategy','Pre‑Planning','Workflow','Build','Testing & QA','Training & Activation','Post Go‑Live','Optimization'].map((t,i)=>(
-                      <div key={i} className="p-3 rounded-xl bg-white ring-1 ring-slate-200 text-sm text-slate-700">{t}</div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
+<section className="relative overflow-hidden py-16 sm:py-24">
+  <div className="absolute inset-0 -z-10">
+    <div className="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-gradient-to-br from-[color:var(--primary)]/20 to-[color:var(--accent)]/20 blur-3xl"></div>
+    <div className="absolute -bottom-24 -left-24 w-72 h-72 rounded-full bg-gradient-to-tr from-[color:var(--accent)]/20 to-[color:var(--primary)]/20 blur-3xl"></div>
+  </div>
+
+  <div className="section">
+    <div className="grid lg:grid-cols-12 gap-10 items-center">
+      
+      {/* Left Side Text */}
+      <div className="lg:col-span-7">
+        <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 mb-6">
+          EMR/EHR <span className="bg-gradient-to-r from-[color:var(--primary)] to-[color:var(--accent)] bg-clip-text text-transparent">Application</span>
+        </h1>
+
+        <div className="p-6 sm:p-8 rounded-2xl ring-1 ring-slate-200 bg-white/80 backdrop-blur">
+          <p className="text-lg sm:text-xl text-slate-700 leading-relaxed">
+            <span className="font-semibold text-[color:var(--primary)]">LUZORION</span> has been providing EMR implementation and training support since <span className="font-semibold">2023</span> with experience in both short and long-term project plans. Our experienced healthcare IT professionals have built careers on successful EHR deployments across diverse care settings. We provide end-to-end planning and implementation services to guide you through strategy, planning, workflow assessment, build, activation, and post go-live monitoring. Our experience translates to lessons learned and practical solutions. We collaborate closely, learn your needs, and integrate our product knowledge to achieve your expected results.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-2">
+            {['Strategy', 'Workflow', 'Build', 'Training', 'Go-Live', 'Optimization'].map((chip) => (
+              <span
+                key={chip}
+                className="px-3 py-1 rounded-full text-sm font-medium bg-[color:var(--primary)]/10 text-[color:var(--primary)] border border-[color:var(--primary)]/20"
+              >
+                {chip}
+              </span>
+            ))}
           </div>
         </div>
-      </section>
+      </div>
+
+      {/* Right Side Image */}
+      <div className="lg:col-span-5 flex justify-center">
+        <div className="relative">
+          <div className="absolute -inset-4 bg-gradient-to-r from-[color:var(--primary)]/15 to-[color:var(--accent)]/15 rounded-2xl blur-xl"></div>
+          <div className="relative rounded-2xl overflow-hidden ring-1 ring-slate-200">
+            <img
+              src="/images/ehr-hero.jpg" // 👉 Replace with your actual image path
+              alt="EHR Implementation"
+              className="w-full h-auto object-cover rounded-2xl"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Phases */}
       <section className="py-12 sm:py-16 bg-white">

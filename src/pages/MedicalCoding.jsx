@@ -46,9 +46,9 @@ export default function MedicalCoding() {
       {/* Trust Badges */}
       <section className="py-12 bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <p className="text-center text-sm uppercase tracking-wider text-gray-500 mb-8">Trusted by leading healthcare providers</p>
+          <p className="text-center text-sm uppercase tracking-wider text-gray-500 mb-8">Coding Services Trusted by leading healthcare providers</p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {['AAPC', 'AHIMA', 'KLAS 2025', 'SOC 2'].map((badge, i) => (
+            {['Inpatient/Outpatient Coding', 'E&M/ED Coding', 'Surgery/Radiology Coding', 'HCC(Risk Adjustment)/Home Health Coding'].map((badge, i) => (
               <div key={i} className="bg-gray-50 p-4 rounded-lg text-center">
                 <span className="text-sm font-medium text-gray-700">{badge}</span>
               </div>
