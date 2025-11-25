@@ -12,6 +12,7 @@ import MedicalBilling from './pages/MedicalBilling';
 import HealthcareDataAnalytics from './pages/HealthcareDataAnalytics';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import ScrollToTop from './pages/ScrollToTop';
+
 function App() {
   return (
     <>
@@ -25,6 +26,7 @@ function App() {
           <Route path="/services/medical-coding" element={<MedicalCoding />} />
           <Route path="/services/medical-billing" element={<MedicalBilling />} />
           <Route path="/services/healthcare-data-analytics" element={<HealthcareDataAnalytics />} />
+          <Route path="/resources" element={<Resources />} />
           <Route path="/EMR/EHR" element={<Resources />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
