@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://luzorion.com/sitemap.xml
+
+# Directories
+Disallow: /api/
+Disallow: /admin/
+
+# Files
+Disallow: *.json
+
+# Host
+Host: https://luzorion.com
+
+
