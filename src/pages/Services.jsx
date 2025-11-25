@@ -100,8 +100,8 @@ export default function Services() {
           </p>
         </div>
 
-        {/* Service Cards */}
-        <div className="grid md:grid-cols-2 gap-10 lg:gap-12">
+        {/* Service Cards - Alternating Layout */}
+        <div className="space-y-16 lg:space-y-24">
           {services.map((service, index) => (
             <div
               key={index}
@@ -110,78 +110,83 @@ export default function Services() {
                 : 'hover:shadow-xl hover:scale-[1.01]'
                 }`}
             >
-              {/* Service Image */}
-              {service.image && (
-                <div className="relative h-56 overflow-hidden">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                </div>
-              )}
+              <div className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
+                {/* Service Image */}
+                {service.image && (
+                  <div className="lg:w-1/2 relative h-64 lg:h-auto lg:min-h-[400px] overflow-hidden">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                  </div>
+                )}
 
-              <div
-                className="p-10 cursor-pointer group"
-                onClick={() => toggleCard(index)}
-              >
-                <div className="flex items-start justify-between">
-                  <div className="flex items-start space-x-6 md:space-x-8">
-                    <div className={`w-16 h-16 md:w-20 md:h-20 rounded-3xl bg-gradient-to-br ${service.accent} flex items-center justify-center text-white shadow-md`}>
-                      {service.icon}
-                    </div>
-                    <div>
-                      <h3 className="text-2xl sm:text-3xl font-bold text-slate-800 mb-2 sm:mb-3 group-hover:text-[color:var(--primary)] transition-colors">
-                        {service.title}
-                      </h3>
-                      <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-                        {service.description}
-                      </p>
+                {/* Service Content */}
+                <div className="lg:w-1/2 p-8 lg:p-12">
+                  <div
+                    className="cursor-pointer group"
+                    onClick={() => toggleCard(index)}
+                  >
+                    <div className="flex items-start justify-between mb-6">
+                      <div className="flex items-start space-x-6">
+                        <div className={`w-16 h-16 md:w-20 md:h-20 rounded-3xl bg-gradient-to-br ${service.accent} flex items-center justify-center text-white shadow-md flex-shrink-0`}>
+                          {service.icon}
+                        </div>
+                        <div>
+                          <h3 className="text-2xl sm:text-3xl font-bold text-slate-800 mb-2 sm:mb-3 group-hover:text-[color:var(--primary)] transition-colors">
+                            {service.title}
+                          </h3>
+                          <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+                            {service.description}
+                          </p>
+                        </div>
+                      </div>
+                      <button
+                        className="text-slate-400 hover:text-[color:var(--primary)] transition-colors flex-shrink-0"
+                        aria-label={expandedCard === index ? "Collapse" : "Expand"}
+                      >
+                        {expandedCard === index ? <FaChevronUp /> : <FaChevronDown />}
+                      </button>
                     </div>
                   </div>
-                  <button
-                    className="text-slate-400 hover:text-[color:var(--primary)] transition-colors"
-                    aria-label={expandedCard === index ? "Collapse" : "Expand"}
-                  >
-                    {expandedCard === index ? <FaChevronUp /> : <FaChevronDown />}
-                  </button>
-                </div>
-              </div>
 
-              {/* Expanded Details */}
-              <div
-                className={`px-6 sm:px-10 overflow-hidden transition-all duration-700 ease-in-out ${expandedCard === index ? 'max-h-[1200px] pb-10' : 'max-h-0'
-                  }`}
-              >
-                <div className="pt-6 border-t border-slate-100">
-                  <p className="text-slate-700 mb-6 sm:mb-8 leading-relaxed text-base sm:text-lg">
-                    {service.details}
-                  </p>
-                  <ul className="space-y-4 sm:space-y-5 mb-8 sm:mb-10">
-                    {service.features.map((feature, i) => (
-                      <li key={i} className="flex items-start">
-                        <div className={`w-8 h-8 rounded-full bg-gradient-to-br ${service.accent} text-white flex items-center justify-center mr-4 shadow-sm`}>
-                          <FaCheck className="w-4 h-4" />
-                        </div>
-                        <span className="text-base sm:text-lg text-slate-700">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="flex flex-col sm:flex-row gap-4 sm:gap-5">
-                    <Link
-                      to={`/contact?service=${encodeURIComponent(service.title)}`}
-                      className={`px-6 py-4 sm:px-10 sm:py-5 bg-gradient-to-r ${service.accent} text-white rounded-xl font-semibold hover:opacity-90 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 flex items-center text-base sm:text-lg`}
-                    >
-                      Get Started
-                      <FaArrowRight className="ml-3 w-5 h-5" />
-                    </Link>
-                    <Link
-                      to={service.path}
-                      className="px-6 py-4 sm:px-10 sm:py-5 border-2 border-slate-200 text-slate-700 rounded-xl font-semibold hover:bg-slate-50 transition-colors text-base sm:text-lg"
-                    >
-                      Learn More
-                    </Link>
+                  {/* Expanded Details */}
+                  <div
+                    className={`overflow-hidden transition-all duration-700 ease-in-out ${expandedCard === index ? 'max-h-[1200px] opacity-100' : 'max-h-0 opacity-0'
+                      }`}
+                  >
+                    <div className="pt-6 border-t border-slate-100">
+                      <p className="text-slate-700 mb-6 sm:mb-8 leading-relaxed text-base sm:text-lg">
+                        {service.details}
+                      </p>
+                      <ul className="space-y-4 sm:space-y-5 mb-8 sm:mb-10">
+                        {service.features.map((feature, i) => (
+                          <li key={i} className="flex items-start">
+                            <div className={`w-8 h-8 rounded-full bg-gradient-to-br ${service.accent} text-white flex items-center justify-center mr-4 shadow-sm flex-shrink-0`}>
+                              <FaCheck className="w-4 h-4" />
+                            </div>
+                            <span className="text-base sm:text-lg text-slate-700">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      <div className="flex flex-col sm:flex-row gap-4 sm:gap-5">
+                        <Link
+                          to={`/contact?service=${encodeURIComponent(service.title)}`}
+                          className={`px-6 py-4 sm:px-10 sm:py-5 bg-gradient-to-r ${service.accent} text-white rounded-xl font-semibold hover:opacity-90 transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5 flex items-center text-base sm:text-lg`}
+                        >
+                          Get Started
+                          <FaArrowRight className="ml-3 w-5 h-5" />
+                        </Link>
+                        <Link
+                          to={service.path}
+                          className="px-6 py-4 sm:px-10 sm:py-5 border-2 border-slate-200 text-slate-700 rounded-xl font-semibold hover:bg-slate-50 transition-colors text-base sm:text-lg"
+                        >
+                          Learn More
+                        </Link>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
