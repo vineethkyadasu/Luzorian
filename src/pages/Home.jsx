@@ -254,6 +254,10 @@ export default function Home() {
                 img: '/images/45d81e1fbb574e26971763052abdc99c.jpg',
                 alt: 'Medical professional using tablet for patient documentation',
                 icon: '⏱️',
+                primaryCta: 'Explore EHR Integration',
+                primaryLink: '/services/ehr-integration',
+                secondaryCta: 'Explore Scribing',
+                secondaryLink: '/services/medical-scribing',
                 color: 'from-blue-500 to-blue-600'
               },
               {
@@ -262,6 +266,10 @@ export default function Home() {
                 img: '/images/new_doctor.jpg',
                 alt: 'Healthcare analytics dashboard showing revenue metrics and data visualization',
                 icon: '📈',
+                primaryCta: 'Explore Coding & Billing',
+                primaryLink: '/resources',
+                secondaryCta: 'Explore Scribing',
+                secondaryLink: '/services/medical-scribing',
                 color: 'from-green-500 to-green-600'
               }
             ].map((f, i) => (
@@ -292,19 +300,19 @@ export default function Home() {
                     <p className="text-lg text-slate-600 leading-relaxed mb-8">{f.body}</p>
                     <div className="flex flex-col sm:flex-row gap-4">
                       <Link
-                        to="/resources"
+                        to={f.primaryLink}
                         className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[color:var(--primary)] to-[color:var(--accent)] text-white font-semibold rounded-xl hover:shadow-lg transition-all duration-200"
                       >
-                        Explore Coding to explore billing
+                        {f.primaryCta}
                         <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                         </svg>
                       </Link>
                       <Link
-                        to="/services/medical-scribing"
+                        to={f.secondaryLink}
                         className="inline-flex items-center px-6 py-3 bg-white text-slate-700 font-semibold rounded-xl border-2 border-slate-200 hover:border-[color:var(--primary)] hover:text-[color:var(--primary)] transition-all duration-200"
                       >
-                        Explore Scribing
+                        {f.secondaryCta}
                       </Link>
                     </div>
                   </div>
