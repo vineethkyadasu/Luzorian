@@ -13,7 +13,7 @@ export default function Header() {
             <Link to="/" className="flex items-center gap-2" aria-label="Home">
               <img src="/images/logo.png" alt="LUZORION logo" className="h-10 w-10 md:h-12 md:w-12" loading="lazy" />
               <div className="leading-tight">
-                <span className="font-semibold text-[color:var(--primary)] text-lg md:text-xl block">LUZORION</span>
+                <span className="font-semibold text-[color:var(--primary)] text-lg md:text-xl block">LUZORION HEALTHCARE</span>
                 <span className="block text-[10px] md:text-xs text-slate-500 tracking-wide">Trust In Precision</span>
               </div>
             </Link>
